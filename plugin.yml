@@ -1,0 +1,7 @@
+main: xyz.frostwolf.server.FactionsLM
+version: 1.0.1
+name: FLM
+
+commands:
+  FLM:
+    description: Comando para ver la version del plugin.

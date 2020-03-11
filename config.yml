@@ -1,0 +1,24 @@
+Messages:
+    t-console-exist: "No se puede ejecutar ese comando desde la consola."
+    t-reload-console: "El plugin se ha recargado correctamente."
+    t-spawn-exist: "&aEl spawn no existe aun."
+    t-spawn: "&aTeletransportandote al spawn."
+    t-setspawn: "&aEl spawn se ha modificado correctamente."
+    t-reload: "&aEl plugin se ha recargado correctamente."
+    t-exist: "&aEste comando no existe."
+    t-none: "&aUsa &6/flm help &apara ver todos los comandos."
+    t-help: "&cAYUDA DEL PLUGIN"
+    t-help-version: "&aMuestra la version del plugin"
+    t-help-setspawn: "&aEstablece el spawn."
+    t-help-spawn: "&aTe teletransporta al spawn."
+    t-help-reload: "&aRecarga la configuracion del plugin."
+Config:
+    mensaje-bienvenida: true
+    mensaje-bienvenida-texto: "&aBienvenido &c&l%player% &aa Latin Mania"
+    Spawn:
+    x: 
+    y: 
+    z: 
+    yaw: 
+    pitch: 
+    world: 
