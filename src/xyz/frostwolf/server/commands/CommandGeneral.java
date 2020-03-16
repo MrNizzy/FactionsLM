@@ -23,13 +23,14 @@ public class CommandGeneral implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command comando, String label, String[] args) {
 
 		FileConfiguration config = plugin.getConfig();
+		FileConfiguration messages = plugin.getMessages();
 		if (!(sender instanceof Player)) {
 			if (args[0].equalsIgnoreCase("reload")) {
 				// Recargar plugin
 				plugin.reloadConfig();
-				Bukkit.getConsoleSender().sendMessage(plugin.nombre + " "+ config.getString("Messages.t-reload-console"));
+				Bukkit.getConsoleSender().sendMessage(plugin.nombre + " "+ messages.getString("Messages.t-reload-console"));
 			}else {
-				Bukkit.getConsoleSender().sendMessage(plugin.nombre + " "+ config.getString("Messages.t-console-exist"));
+				Bukkit.getConsoleSender().sendMessage(plugin.nombre + " "+ messages.getString("Messages.t-console-exist"));
 			}
 			
 			
@@ -47,19 +48,19 @@ public class CommandGeneral implements CommandExecutor {
 				else if (args[0].equalsIgnoreCase("help")) {
 					
 					jugador.sendMessage(plugin.nombre + ChatColor.translateAlternateColorCodes('&',
-							config.getString("Messages.t-help").replaceAll("%player%", jugador.getName())));
+							messages.getString("Messages.t-help").replaceAll("%player%", jugador.getName())));
 					
 					jugador.sendMessage(ChatColor.GOLD+"/flm version " + ChatColor.translateAlternateColorCodes('&',
-							config.getString("Messages.t-help-version").replaceAll("%player%", jugador.getName())));
+							messages.getString("Messages.t-help-version").replaceAll("%player%", jugador.getName())));
 					
 					jugador.sendMessage(ChatColor.GOLD+"/flm reload " + ChatColor.translateAlternateColorCodes('&',
-							config.getString("Messages.t-help-reload").replaceAll("%player%", jugador.getName())));
+							messages.getString("Messages.t-help-reload").replaceAll("%player%", jugador.getName())));
 					
 					jugador.sendMessage(ChatColor.GOLD+"/flm setspawn " + ChatColor.translateAlternateColorCodes('&',
-							config.getString("Messages.t-help-setspawn").replaceAll("%player%", jugador.getName())));
+							messages.getString("Messages.t-help-setspawn").replaceAll("%player%", jugador.getName())));
 					
 					jugador.sendMessage(ChatColor.GOLD+"/flm spawn " + ChatColor.translateAlternateColorCodes('&',
-							config.getString("Messages.t-help-spawn").replaceAll("%player%", jugador.getName())));
+							messages.getString("Messages.t-help-spawn").replaceAll("%player%", jugador.getName())));
 					return true;
 				}
 				// Teleportarse al spawn
@@ -77,11 +78,11 @@ public class CommandGeneral implements CommandExecutor {
 																						// -268,5 77 -141,5
 																						// -0,7 3.6
 						jugador.sendMessage(plugin.nombre + ChatColor.translateAlternateColorCodes('&',
-								config.getString("Messages.t-spawn").replaceAll("%player%", jugador.getName())));
+								messages.getString("Messages.t-spawn").replaceAll("%player%", jugador.getName())));
 						jugador.teleport(principal_location);
 					} else {
 						jugador.sendMessage(plugin.nombre + ChatColor.translateAlternateColorCodes('&',
-								config.getString("Messages.t-spawn-exist").replaceAll("%player%", jugador.getName())));
+								messages.getString("Messages.t-spawn-exist").replaceAll("%player%", jugador.getName())));
 						return true;
 					}
 
@@ -97,23 +98,23 @@ public class CommandGeneral implements CommandExecutor {
 					config.set("Config.Spawn.world", principal_location.getWorld().getName());
 					plugin.saveConfig();
 					jugador.sendMessage(plugin.nombre + ChatColor.translateAlternateColorCodes('&',
-							config.getString("Messages.t-setspawn").replaceAll("%player%", jugador.getName())));
+							messages.getString("Messages.t-setspawn").replaceAll("%player%", jugador.getName())));
 
 					return true;
 				} else if (args[0].equalsIgnoreCase("reload")) {
 					// Recargar plugin
 					plugin.reloadConfig();
 					jugador.sendMessage(plugin.nombre + ChatColor.translateAlternateColorCodes('&',
-							config.getString("Messages.t-reload").replaceAll("%player%", jugador.getName())));
+							messages.getString("Messages.t-reload").replaceAll("%player%", jugador.getName())));
 					return true;
 				} else {
 					jugador.sendMessage(plugin.nombre + ChatColor.translateAlternateColorCodes('&',
-							config.getString("Messages.t-exist").replaceAll("%player%", jugador.getName())));
+							messages.getString("Messages.t-exist").replaceAll("%player%", jugador.getName())));
 					return true;
 				}
 			} else {
 				jugador.sendMessage(plugin.nombre + ChatColor.translateAlternateColorCodes('&',
-						config.getString("Messages.t-none").replaceAll("%player%", jugador.getName())));
+						messages.getString("Messages.t-none").replaceAll("%player%", jugador.getName())));
 				return true;
 
 			}

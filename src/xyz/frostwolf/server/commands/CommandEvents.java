@@ -23,6 +23,7 @@ public class CommandEvents implements Listener{
 		Player jugador = event.getPlayer();
 		FileConfiguration config = plugin.getConfig();
 		
+		
 		if(config.contains("Config.Spawn.x")) {
 			Location principal_location = new Location(
 					plugin.getServer().getWorld(config.getString("Config.Spawn.world")),
