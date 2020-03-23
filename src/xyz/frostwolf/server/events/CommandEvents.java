@@ -1,4 +1,4 @@
-package xyz.frostwolf.server.commands;
+package xyz.frostwolf.server.events;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
