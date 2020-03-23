@@ -18,7 +18,8 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import xyz.frostwolf.server.commands.CommandGeneral;
-import xyz.frostwolf.server.commands.CommandEvents;
+import xyz.frostwolf.server.events.Chat;
+import xyz.frostwolf.server.events.CommandEvents;
 
 public class FactionsLM extends JavaPlugin {
 	
@@ -55,6 +56,7 @@ public class FactionsLM extends JavaPlugin {
 	public void registerEvents() {
 		PluginManager pm = getServer().getPluginManager();
 		pm.registerEvents(new CommandEvents(this), this);
+		pm.registerEvents(new Chat(), this);
 	}
 	
 	public void registerConfig() {
